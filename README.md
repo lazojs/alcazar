@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lazojs/alcazar.svg?branch=master)](https://travis-ci.org/lazojs/alcazar)
+
 # alcazar
 
 > Things got hot. You look a little hot, you can take off that jacket. Our people don't like to be hot.
