@@ -1,3 +1,7 @@
+// TODO: move lazo conf.json, paths.json, l! to modules to prevent reliance on
+// lazo node module; list text and json modules as dependencies as well; use require.resolve
+// as needed to resolve these modules for copying loaders
+
 var path = require('path');
 var lazoPath = path.resolve(path.join('node_modules', 'lazo'));
 var lazoPathsPath = path.resolve(lazoPath, path.join('lib', 'common', 'resolver', 'paths.json'));

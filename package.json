@@ -1,7 +1,7 @@
 {
   "name": "alcazar",
   "description": "Bundler utility that creates a RequireJS optimizer configuration and copies loaders for optimizing a LazoJS application.",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "keywords": [
     "lazojs",
@@ -28,7 +28,7 @@
   },
   "github": "https://github.com/lazojs/alcazar",
   "scripts": {
-    "test": "grunt test"
+    "test": "gulp ci"
   },
   "devDependencies": {
     "gulp": "3.8.8",
