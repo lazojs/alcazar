@@ -37,6 +37,6 @@ alcazar.removeLoaders('my/application/path', function (err, paths) {
         throw err;
     }
 
-    // finish build 
+    // finish build
 });
 ```
