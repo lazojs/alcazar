@@ -13,6 +13,7 @@ optimizing a LazoJS application.
 var alcazar = require('alcazar');
 
 // get the configuration that provides the lazo 'empty:' paths and sets the loader (l, text, & json) paths
+// perfroms a deep merge of the application conf.json (requirejs property) with the lazo configuration
 alcazar.getConf('my/application/path', function (err, conf) {
     if (err) {
         throw err;

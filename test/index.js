@@ -2,7 +2,7 @@ var chai = require('chai');
 var alcazar = require('../index');
 var path = require('path');
 var fs = require('fs-extra');
-var appPath = 'test/app';
+var appPath = 'test/app-dist';
 var async = require('async');
 var loaders = ['loader.js', 'text.js', 'json.js'];
 
@@ -42,7 +42,8 @@ describe('alcazar', function () {
 
             chai.expect(conf.paths).to.be.Object;
             for (var k in conf.paths) {
-                if (k !== 'text' && k !== 'json') {
+                if (k !== 'text' && k !== 'json' && k !== 'appModuleId1' &&
+                    k !== 'l!appModuleId2' && k !== 'appModuleId3') {
                     chai.expect(conf.paths[k]).to.be.equal('empty:');
                 }
             }

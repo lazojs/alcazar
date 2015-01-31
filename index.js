@@ -7,6 +7,7 @@ var lazoPathsPath = path.resolve(lazoPath, path.join('lib', 'common', 'resolver'
 var lazoConfPath = path.resolve(lazoPath, path.join('conf.json'));
 var fs = require('fs-extra');
 var async = require('async');
+var _ = require('lodash');
 
 function getPathValue(k, v) {
     // do not include lazo paths in the bundle
@@ -83,7 +84,21 @@ module.exports = {
                         'l': path.join(path.resolve(appPath), 'loader.js')
                     }
                 };
-                callback(null, conf);
+
+                var appConfPath = path.resolve(path.join(appPath, 'conf.json'));
+                fs.readFile(appConfPath, function (err, appConf) {
+                    if (err) {
+                        return callback(err, null);
+                    }
+                    try {
+                        appConf = JSON.parse(appConf);
+                        appConf = appConf.requirejs;
+                    } catch (e) {
+                        return callback(e, null);
+                    }
+
+                    callback(null, _.merge(conf, appConf));
+                });
             });
         });
     },

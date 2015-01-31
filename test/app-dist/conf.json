@@ -1,0 +1,9 @@
+{
+    "requirejs": {
+        "paths": {
+            "appModuleId1": "app/client/foo",
+            "l!appModuleId2": "app/client/bar",
+            "appModuleId3": "app/client/baz"
+        }
+    }
+}
