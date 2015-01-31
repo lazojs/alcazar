@@ -1,12 +1,11 @@
 // TODO: move lazo conf.json, paths.json, l! to modules to prevent reliance on
-// lazo node module; list text and json modules as dependencies as well; use require.resolve
-// as needed to resolve these modules for copying loaders
+// lazo node module; list text and json modules as dependencies as well
 
 var path = require('path');
-var lazoPath = path.resolve(path.join('node_modules', 'lazo'));
+var lazoPath = require.resolve('lazo').substr(0, require.resolve('lazo').lastIndexOf(path.sep));
 var lazoPathsPath = path.resolve(lazoPath, path.join('lib', 'common', 'resolver', 'paths.json'));
 var lazoConfPath = path.resolve(lazoPath, path.join('conf.json'));
-var fs = require('fs.extra');
+var fs = require('fs-extra');
 var async = require('async');
 
 function getPathValue(k, v) {
